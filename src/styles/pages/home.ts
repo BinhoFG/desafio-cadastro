@@ -111,9 +111,11 @@ export const CustomerTable = styled('table', {
   },
 
   tbody: {
-    height: 320,
+    height: 280,
     overflowY: 'scroll',
     overflowX: 'hidden',
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
 
     '&::-webkit-scrollbar': {
       width: 10,
@@ -139,6 +141,11 @@ export const CustomerTable = styled('table', {
     overflow: 'hidden',
     backgroundColor: '$white',
     color: '$light-black',
+
+    '&:hover': {
+      cursor: 'pointer',
+      backgroundColor: '#ECECEC',
+    },
 
     'td, th': {
       textAlign: 'center',
@@ -180,7 +187,6 @@ export const Pagination = styled('footer', {
   position: 'absolute',
   bottom: 0,
   left: 0,
-  backgroundColor: '$bg-beige',
   width: '100%',
   padding: '1.5rem',
 

@@ -50,7 +50,7 @@ export default function Home() {
         </thead>
         <tbody>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
@@ -140,7 +140,7 @@ export default function Home() {
             </td>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Jânio Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
