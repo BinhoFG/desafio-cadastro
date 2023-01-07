@@ -7,9 +7,9 @@ export const Container = styled('div', {
 })
 
 export const Header = styled('header', {
-  height: 80,
+  height: 70,
   padding: '0.5rem',
-  paddingLeft: '3rem',
+  paddingLeft: '4rem',
   backgroundColor: '$light-green',
   display: 'flex',
   alignItems: 'center',

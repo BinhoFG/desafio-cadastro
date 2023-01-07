@@ -1,3 +1,5 @@
+import * as Select from '@radix-ui/react-select'
+
 import { styled } from '..'
 
 export const HomeContainer = styled('main', {
@@ -37,7 +39,7 @@ export const SearchBar = styled('div', {
     padding: '0 2rem',
     border: 0,
     borderRadius: 8,
-    backgroundColor: '#1AA59E',
+    backgroundColor: '$light-green',
     color: '$white',
     cursor: 'pointer',
     fontSize: '$md',
@@ -70,29 +72,32 @@ export const SearchActions = styled('div', {
     borderRadius: 6,
     backgroundColor: '$white',
     border: '1px solid $border-gray',
-    fontSize: '0.875rem',
-
-    '.options': {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-
-      button: {
-        border: 0,
-        backgroundColor: '$light-green',
-        color: '$white',
-        padding: '0.25rem',
-        borderRadius: 4,
-        fontSize: '0.7rem',
-        fontWeight: 'bold',
-        cursor: 'pointer',
-
-        '&:hover': {
-          backgroundColor: '$dark-green',
-        },
-      },
-    },
+    fontSize: '$small',
   },
+})
+
+export const SelectTrigger = styled(Select.Trigger, {
+  backgroundColor: '$light-green',
+  color: '$white',
+  border: 0,
+  outline: 0,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '0.25rem',
+  padding: '0.25rem 0.5rem',
+  fontSize: '$extraSmall',
+  borderRadius: 6,
+  cursor: 'pointer',
+
+  '&:hover': {
+    backgroundColor: '$dark-green',
+  },
+
+  svg: {
+    display: 'flex',
+    alignItems: 'center',
+  }
 })
 
 export const CustomerTable = styled('table', {
@@ -142,9 +147,9 @@ export const CustomerTable = styled('table', {
     backgroundColor: '$white',
     color: '$light-black',
 
-    '&:hover': {
-      cursor: 'pointer',
-      backgroundColor: '#ECECEC',
+    '&:not(thead tr):hover': {
+      // cursor: 'pointer',
+      backgroundColor: '$light-gray',
     },
 
     'td, th': {

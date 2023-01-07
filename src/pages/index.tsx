@@ -1,3 +1,9 @@
+import * as Dialog from '@radix-ui/react-dialog'
+import * as Select from '@radix-ui/react-select'
+import { UserPlus, PencilLine, CaretDown } from 'phosphor-react'
+import { CustomerModal } from '../components/CustomerModal'
+import { SelectModal } from '../components/SelectModal'
+
 import {
   CustomerTable,
   HomeContainer,
@@ -5,8 +11,8 @@ import {
   SearchActions,
   SearchBar,
   SearchSection,
+  SelectTrigger,
 } from '../styles/pages/home'
-import { UserPlus, PencilLine } from 'phosphor-react'
 
 export default function Home() {
   return (
@@ -14,24 +20,51 @@ export default function Home() {
       <SearchSection>
         <SearchBar>
           <input placeholder="Pesquise por nome..." />
-          <button>
-            Cadastrar
-            <UserPlus size={24} weight="bold" />
-          </button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button>
+                Cadastrar
+                <UserPlus size={24} weight="bold" />
+              </button>
+            </Dialog.Trigger>
+            <CustomerModal type="add" />
+          </Dialog.Root>
         </SearchBar>
+
         <SearchActions>
           <div className="filter">
             <span>Filtrar</span>
-            <div className="options">
-              <button>STATUS</button>
-              <button>SEXO</button>
-            </div>
+            <Select.Root>
+              <SelectTrigger aria-label="status">
+                <Select.Value placeholder="STATUS" />
+                <Select.Icon>
+                  <CaretDown size={16} />
+                </Select.Icon>
+              </SelectTrigger>
+              <SelectModal options={['Ativo', 'Inativo']} />
+            </Select.Root>
+            <Select.Root>
+              <SelectTrigger aria-label="gender">
+                <Select.Value placeholder="SEXO" />
+                <Select.Icon>
+                  <CaretDown size={16} />
+                </Select.Icon>
+              </SelectTrigger>
+              <SelectModal options={['Masc', 'Fem']} />
+            </Select.Root>
           </div>
+
           <div className="sort">
             <span>Ordenar</span>
-            <div className="options">
-              <button>MAIS RECENTE</button>
-            </div>
+            <Select.Root>
+              <SelectTrigger aria-label="registrationDate">
+                <Select.Value placeholder="DATA DE CADASTRO" />
+                <Select.Icon>
+                  <CaretDown size={16} />
+                </Select.Icon>
+              </SelectTrigger>
+              <SelectModal options={['Mais Recente', 'Mais Antigo']} />
+            </Select.Root>
           </div>
         </SearchActions>
       </SearchSection>
@@ -58,97 +91,142 @@ export default function Home() {
               Avenida José Dutra do Pardal, 32 - Bela Vista, Poa - RS
             </td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Calos Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
           <tr>
-            <td>Jânio Barbosa</td>
+            <td>Eduardo Barbosa</td>
             <td>25/07/2001</td>
             <td>945.882.398-32</td>
             <td>Masculino</td>
-            <td>Avenida José Dutra, 32</td>
+            <td title="Avenida José Dutra, 32">Avenida José Dutra, 32</td>
             <td>Ativo</td>
-            <td>
-              <PencilLine size={32} />
-            </td>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <td>
+                  <PencilLine size={32} />
+                </td>
+              </Dialog.Trigger>
+              <CustomerModal type="edit" />
+            </Dialog.Root>
           </tr>
         </tbody>
       </CustomerTable>
