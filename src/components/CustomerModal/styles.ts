@@ -95,6 +95,12 @@ export const NewCustomerForm = styled('form', {
     },
   },
 
+  '.errorMessage': {
+    position: 'absolute',
+    fontSize: '$extraSmall',
+    color: 'red',
+  },
+
   '> button': {
     marginTop: '1.5rem',
     height: 50,

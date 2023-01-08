@@ -1,5 +1,3 @@
-import * as Select from '@radix-ui/react-select'
-
 import { styled } from '..'
 
 export const HomeContainer = styled('main', {
@@ -18,6 +16,11 @@ export const SearchBar = styled('div', {
   width: 800,
   display: 'flex',
   gap: '1rem',
+
+  form: {
+    display: 'flex',
+    flex: 1,
+  },
 
   input: {
     flex: 1,
@@ -55,58 +58,22 @@ export const SearchBar = styled('div', {
   },
 })
 
-export const SearchActions = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-
-  width: 720,
-  marginTop: '1rem',
-
-  '> div': {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '1rem',
-
-    padding: '0.5rem',
-    borderRadius: 6,
-    backgroundColor: '$white',
-    border: '1px solid $border-gray',
-    fontSize: '$small',
-  },
-})
-
-export const SelectTrigger = styled(Select.Trigger, {
-  backgroundColor: '$light-green',
-  color: '$white',
-  border: 0,
-  outline: 0,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '0.25rem',
-  padding: '0.25rem 0.5rem',
-  fontSize: '$extraSmall',
-  borderRadius: 6,
-  cursor: 'pointer',
-
-  '&:hover': {
-    backgroundColor: '$dark-green',
-  },
-
-  svg: {
-    display: 'flex',
-    alignItems: 'center',
-  }
-})
-
 export const CustomerTable = styled('table', {
   width: 1000,
   display: 'flex',
   flexDirection: 'column',
 
+  marginBottom: '3rem',
   borderTop: '2px solid $dark-green',
   marginTop: '1rem',
+
+  '.noAddress': {
+    color: '$inactive',
+  },
+
+  '.inactive': {
+    backgroundColor: '$light-inactive',
+  },
 
   'thead tr': {
     marginTop: '1rem',
@@ -116,23 +83,8 @@ export const CustomerTable = styled('table', {
   },
 
   tbody: {
-    height: 280,
-    overflowY: 'scroll',
-    overflowX: 'hidden',
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
-
-    '&::-webkit-scrollbar': {
-      width: 10,
-    },
-
-    '&::-webkit-scrollbar-track': {
-      backgroundColor: '$border-gray',
-    },
-
-    '&::-webkit-scrollbar-thumb': {
-      boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
-    },
   },
 
   tr: {
@@ -147,7 +99,7 @@ export const CustomerTable = styled('table', {
     backgroundColor: '$white',
     color: '$light-black',
 
-    '&:not(thead tr):hover': {
+    '&:not(thead tr):not(.inactive):hover': {
       // cursor: 'pointer',
       backgroundColor: '$light-gray',
     },
@@ -186,33 +138,10 @@ export const CustomerTable = styled('table', {
       },
     },
   },
-})
 
-export const Pagination = styled('footer', {
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  width: '100%',
-  padding: '1.5rem',
-
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '0.5rem',
-
-  span: {
-    width: 20,
-    height: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 4,
-    backgroundColor: '$dark-green',
-    color: '$white',
-    cursor: 'pointer',
-
-    '&:hover': {
-      backgroundColor: '$light-green',
-    },
+  '.noCustomers': {
+    color: '$light-black',
+    fontWeight: 'bold',
+    fontSize: '$lg',
   },
 })

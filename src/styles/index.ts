@@ -21,6 +21,7 @@ export const {
       'light-gray': '#ECECEC',
       active: '#3ddf2d',
       inactive: '#e4605e',
+      'light-inactive': '#F28C8B',
     },
     fontSizes: {
       extraSmall: '0.75rem',
